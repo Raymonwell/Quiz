@@ -26,6 +26,9 @@ body{
     text-align: center;
     margin: 0;
 }
+.quiz-header.close{
+    display: none;
+}
 h2{
     padding: 1rem;
     text-align: center;
@@ -59,4 +62,17 @@ button:hover{
 button:focus{
     outline: none;
     background-color: #44b927;
+}
+
+.summary {
+    display: none; 
+}
+
+.summary.open {
+    display: block;
+}
+.summary h4 {
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.6rem;
 }

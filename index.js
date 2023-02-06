@@ -41,6 +41,10 @@ const b_text = document.getElementById('b_text')
 const c_text = document.getElementById('c_text')
 const d_text = document.getElementById('d_text')
 const submitbtn = document.getElementById('submit')
+const quizContainer = document.querySelector(".quiz-header")
+const summary = document.querySelector(".summary")
+const scoreHolder = document.querySelector("#score")
+const retake = document.querySelector("#retake")
 
 let currentQuiz = 0
 let score = 0
@@ -73,6 +77,9 @@ function getSelected() {
     return answer
 }
 
+retake.onclick = function() {
+    location.reload();
+}
 
 submitbtn.addEventListener('click', () => {
     const answer = getSelected()
@@ -86,6 +93,9 @@ submitbtn.addEventListener('click', () => {
         if(currentQuiz < quizData.length) {
             loadQuiz()
         } else {
+            quizContainer.classList.add("close");
+            summary.classList.add("open");
+            scoreHolder.innerText = score;
             // quiz.innerHTML =  '
             // <h2>You answer ${score}/${quizData.length} questions correctly</h2>
 
@@ -93,4 +103,4 @@ submitbtn.addEventListener('click', () => {
             // '
         }
     } 
-})
+}) 
